@@ -1,0 +1,152 @@
+//Fonts
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+
+$font-weights: (
+  "LightWeight": 300,
+  "MediumWeight": 500,
+  "BoldWeight": 700,
+);
+$font-size: 2rem;
+//Colors
+$primary1: hsl(240, 38%, 20%); /* Dark Blue */
+$primary2: hsl(240, 18%, 77%); /* Grayish Blue */
+
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: $font-size;
+  min-height: 90vh;
+}
+.wrapper{
+ 
+ width: 100%;
+}
+#person{
+  width: 92%;
+  margin: auto;
+}
+.about {
+  padding: 1rem;
+ flex: 2;
+ margin-right: -30rem;
+ z-index: 100;
+  background-image: url(../../images/pattern-quotes.svg);
+  background-repeat: no-repeat;
+  background-position: 8.4rem top;
+  background-size: normal;
+  p {
+    font-size: 1.8rem;
+    width: 43rem;
+    color: $primary1;
+    font-weight: map-get($map: $font-weights, $key:'LightWeight' );
+  }
+  .info{
+    font-size: 1rem;
+    color:$primary1;
+    font-weight: map-get($map: $font-weights, $key: 'BoldWeight' );
+    margin-left: 2rem;
+    span{
+      color: $primary2;
+      font-weight: map-get($map: $font-weights, $key: 'MediumWeight' );
+
+    }
+  }
+}
+.image {
+  padding: 2rem;
+  flex: 1.2;
+  background-image: url(../../images/pattern-bg.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  img {
+    width: 34rem;
+    -webkit-box-shadow: 10px 10px 44px -16px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 10px 10px 44px -16px rgba(0, 0, 0, 0.75);
+    box-shadow: 10px 10px 44px -16px rgba(0, 0, 0, 0.75);
+  }
+}
+.controls {
+  width: 100px;
+  padding: 1.5rem;
+  position: absolute;
+  top: 90%;
+  transform: translateY(-20%);
+  left: 10%;
+  background-color: #fff;
+  border-radius: 50px;
+}
+.controls img {
+  width: 10px;
+}
+//MEDIA QUERIES
+@media screen and ( 1200px >= width <= 1920px){
+  .image{
+    img{
+      width: 45rem;
+    }
+  }
+}
+@media screen and (width<= 1024px) {
+  .about {
+   
+   margin-right: auto;
+   p{
+    width: 22rem;
+   }
+  }
+  .image{
+    img{
+      width: 30rem;
+    }
+  }
+}
+@media screen and (width<= 992px) {
+}
+@media screen and (width<=768px) {
+  .about {
+    background-position: 50% top;
+   margin-right: auto;
+  
+    p{
+      font-size: 1.5rem;
+      width: auto;
+      
+    }
+  }
+
+  .image{
+    
+    img{
+      width: 30rem;
+    }
+  }
+  .controls{
+    top:85%;
+    left:50%;
+    transform: translateX(-50%);
+  }
+}
+@media screen and (width<=600px) {
+  .wrapper img{
+    width: 20rem;
+    z-index: -1;
+  }
+  .image{
+    img{
+      width: 20rem;
+    }
+  }
+
+}
